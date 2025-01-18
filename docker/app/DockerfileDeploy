@@ -1,4 +1,4 @@
-FROM amazoncorretto:21-alpine-jdk AS builder
+FROM amazoncorretto:23-alpine-jdk AS builder
 COPY ./src/demo /app
 RUN cd /app && ./gradlew build
 
