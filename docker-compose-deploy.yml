@@ -6,8 +6,6 @@ services:
     build: 
       context: .
       dockerfile: ./docker/app/DockerfileDeploy
-    ports:
-      - 8080:8080
     labels:
       traefik.enable: true
       traefik.http.routers.springboot2.rule: Host(`springboot2.yuzupi.com`)
