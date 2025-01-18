@@ -8,3 +8,13 @@ services:
       dockerfile: ./docker/app/DockerfileDeploy
     ports:
       - 8080:8080
+    labels:
+      traefik.enable: true
+      traefik.http.routers.springboot2.rule: Host(`springboot2.yuzupi.com`)
+      traefik.http.routers.springboot2.tls: true
+      traefik.http.routers.springboot2.tls.certResolver: letsencrypt
+    networks: ["traefik"]
+
+networks:
+  traefik:
+    external: true
