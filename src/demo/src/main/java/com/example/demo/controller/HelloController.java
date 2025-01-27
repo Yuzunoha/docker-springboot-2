@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.HelloService;
+import com.example.demo.service.TimeService;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
   private final HelloService helloService;
+  private final TimeService timeService;
 
   @RequestMapping({ "/", "hello" })
   public String hello() {
@@ -21,4 +24,8 @@ public class HelloController {
     return helloService.test();
   }
 
+  @RequestMapping("time")
+  public String time() {
+    return timeService.time();
+  }
 }
