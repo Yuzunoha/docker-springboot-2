@@ -15,4 +15,10 @@ public class HelloController {
   public String hello() {
     return helloService.hello();
   }
+
+  @RequestMapping("test")
+  public String test() {
+    return helloService.test();
+  }
+
 }
